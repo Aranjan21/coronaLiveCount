@@ -15,7 +15,7 @@ def corona():
 
     total_confirmed_cases = soup.find_all("p")[3].text
     total_death = soup.find_all("p")[5].text
-    total_recovered = soup.find_all("p")[7].text
+    total_recovered = soup.find_all("p")[9].text
     #Parse data that are stored between <tr> ..</tr> of HTML 
     tables = soup.find('table', id='sortable_table_global')
     headings = tables.findAll('thead')
