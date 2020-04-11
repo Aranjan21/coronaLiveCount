@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="content-section">
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <br/>
+
+<hr class="intro-driver">
+    <div class="center">
+        <table class="table table-dark table-bordered">
+            <p>Total Confirmed cases - {{ total_confirmed_cases }}</p>
+            <p>Total Death - {{ total_death }}</p>
+            <p> {{ tr_elements }}</p>
+                        
+            <thread>
+                <tr>
+                    <th class='col1'>country</th>
+                    <th class="col2">Confirmed</th>
+                    <th class="col3">death</th>
+                </tr>
+            </thread>
+            {% for row in country %}
+                {% set outer_loop = loop %}
+                {% for confirm in confirmed %} 
+                        {% set inner_loop = loop %}
+                        {% for dead in death %}
+                            {% if outer_loop.index0 == loop.index0 %}  {% if inner_loop.index0 == loop.index0 %}
+                   <tr>
+                   <td>{{ row }}</td> <td> {{ confirm }}</td> <td>{{ dead }}</td>
+                   </tr>
+                {% endif %}
+                {% endif %}          
+           {% endfor %}   
+       {% endfor %}             
+    {% endfor %}               
+
+     </tbody>
+ </table>     
+{% endblock %}
