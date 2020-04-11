@@ -2,13 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head style="background-color:rgb(211, 211, 211);">
     <title>{{ title }} | WORLD CORONA DASHBOARD</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/intro-bg') }}">
 </head>
-<body>
+
+<body style="background-color:lightgrey;">  
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
           <div class="navbar-header">
@@ -18,9 +19,11 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
+              <a class="navbar-brand topnav" href="{{ url_for('corona') }}">Live Corona Status</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('wiki') }}">COVID_FACTS </a></li>
               </ul>
           </div>
         </div>
@@ -36,7 +39,7 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                     </ul>
-                    <p class="copyright text-muted small">Copyright © 2020. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright © 2020. All Rights Reserved .  (Usha Ranjan Abhishek)</p>
                 </div>
             </div>
         </div>

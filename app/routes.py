@@ -15,13 +15,14 @@ def corona():
 
     total_confirmed_cases = soup.find_all("p")[3].text
     total_death = soup.find_all("p")[5].text
+    total_recovered = soup.find_all("p")[7].text
     #Parse data that are stored between <tr> ..</tr> of HTML 
     tables = soup.find('table', id='sortable_table_global')
     headings = tables.findAll('thead')
     head = [heading.text.strip() for heading in headings]
     if (head[:5] == ['Name', 'Confirmed', 'Changes', 'percentChange','Deceased']):
         pass
-    for table_row in tables.findAll('tr')[2:20]: 
+    for table_row in tables.findAll('tr')[2:30]: 
         table_data = table_row.find_all('td')
         if not table_data:
             continue    
@@ -31,5 +32,12 @@ def corona():
         confirmed.append(confirm.strip())
         death.append(deceased)
         
-    return render_template('index.html',total_confirmed_cases=total_confirmed_cases, total_death=total_death,country=country,death=death,confirmed=confirmed)
+    return render_template('index.html',total_confirmed_cases=total_confirmed_cases, total_death=total_death,total_recovered=total_recovered,country=country,death=death,confirmed=confirmed)
+
+@app.route('/wiki')
+def wiki():
+    """
+    Render the corona facts  template on the /CoronaFacts route
+    """
+    return render_template('corona_facts.html')
 

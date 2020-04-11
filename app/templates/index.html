@@ -1,25 +1,27 @@
 {% extends "base.html" %}
 
-{% block body %}
 
+
+{% block body %}
+<div class="intro-headr">
 <div class="content-section">
     <div class="outer">
       <div class="middle">
         <div class="inner">
           <br/>
-
-<hr class="intro-driver">
     <div class="center">
         <table class="table table-dark table-bordered">
-            <p>Total Confirmed cases - {{ total_confirmed_cases }}</p>
-            <p>Total Death - {{ total_death }}</p>
-            <p> {{ tr_elements }}</p>
+            <h1 style="text-align:center;"> WORLD COVID-19 STATS</h1>
+            <p><font color="darkblue">Total Confirmed cases - {{ total_confirmed_cases }}</font></p>
+            <p><font color="red">Total Death - {{ total_death }}</font></p>
+            <p><font color="green">Total Recovered - {{ total_recovered }}</font></p>
+            
                         
             <thread>
                 <tr>
-                    <th class='col1'>country</th>
-                    <th class="col2">Confirmed</th>
-                    <th class="col3">death</th>
+                    <th class='col1'>COUNTRY</th>
+                    <th class="col2">CONFIRMED</th>
+                    <th class="col3">DEATH</th>
                 </tr>
             </thread>
             {% for row in country %}
@@ -36,7 +38,9 @@
            {% endfor %}   
        {% endfor %}             
     {% endfor %}               
-
+</div>
      </tbody>
- </table>     
+ </table>  
+ 
+
 {% endblock %}
