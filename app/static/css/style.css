@@ -67,13 +67,13 @@ p.copyright {
 }
 
 .intro-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: left;
-    color:black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color:rgb(207, 24, 24);
     background: url(../img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
-    height: 10%;
+    height: 100%;
 }
 
 .intro-message {
