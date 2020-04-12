@@ -41,3 +41,22 @@ def wiki():
     """
     return render_template('corona_facts.html')
 
+@app.route('/india')
+def india():
+    """
+    Render the INDIA template on the /CoronaFacts route
+    
+    url2 = requests.get('https://www.covid19india.org/').text
+    soup2 = BeautifulSoup(url2, 'html.parser')
+
+    total_confirmed_cases = soup2.find("div", {"class": "level"})[3].text
+    total_death = soup2.find("h1").text
+    total_recovered = soup2.find_all("p")[9].text
+    """
+
+
+    return render_template('india.html')
+
+
+
+
