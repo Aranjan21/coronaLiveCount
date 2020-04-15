@@ -6,18 +6,42 @@
       <div class="middle">
         <div class="inner">
           <br/>
+    <div class="map">      
     <div class="center">
         <table class="table table-dark table-bordered">
-            
-            <h1 style="text-align:center;">  COMING SOON . THANKS FOR YOUR PATIENCE  </h1>
-            
-            
+          <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+          <div class="image">
+      
+            <h1 style="text-align:center;">COVID-19 STATEWISE STATS</h1>
+            <p><font color="darkblue">Total Confirmed cases - {{ total_confirmed_cases }}</font></p>
+            <p><font color="red">Total Death - {{ total_death }}</font></p>
+            <p><font color="green">Total Recovered - {{ total_recovered }}</font></p>
+            <thread>
+              <tr>
+                  <th class='col1'>STATES/UT</th>
+                  <th class="col2">CONFIRMED</th>
+                  <th class="col3">DEATH</th>
+              </tr>
+          </thread>
+          {% for row in state[:-3] %}
+          {% set outer_loop = loop %}
+            {% for confirm in confirmed %}
+            {% set inner_loop = loop %}
+              {% for dead in death %}
+              {% if outer_loop.index0 == loop.index0 %}  {% if inner_loop.index0 == loop.index0 %}
 
-
-
-
+                <tr>
+                  <td> ★{{ row }}</td> <td> {{ confirm }}</td> <td> {{ dead }}</td>
+                </tr>
+                {% endif %}
+              {% endif %}  
+            {% endfor %}
+          {% endfor %}   
+        {% endfor %}
+      
     </tbody>
   </table>  
+</div>
 
    
 {% endblock %}
