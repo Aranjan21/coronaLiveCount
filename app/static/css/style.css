@@ -124,11 +124,3 @@ p.copyright {
     margin-left: auto;
     margin-right: auto;
 }
-
-
-.image{
-    background: url("india_map.jpg") repeat scroll 0 0 transparent;
-    height: 185px;
-    width: 266px;
-    border: 1px solid;
-    }

@@ -1,23 +1,22 @@
 {% extends "base.html" %}
 {% block body %}
 
-<div class="content-section">
-    <div class="outer">
-      <div class="middle">
-        <div class="inner">
-          <br/>
-    <div class="map">      
-    <div class="center">
+<div class="intro-header">
+  <div class="content-section">
+      <div class="outer">
+        <div class="middle">
+          <div class="inner">
+            <br/>
+      <div class="center">
         <table class="table table-dark table-bordered">
-          <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-          <div class="image">
-      
-            <h1 style="text-align:center;">COVID-19 STATEWISE STATS</h1>
+              
+            <h1 style="text-align:center;color: chartreuse;">COVID-19 STATEWISE STATS</h1>
             <p><font color="darkblue">Total Confirmed cases - {{ total_confirmed_cases }}</font></p>
+            <h6 style="text-align: centr; color:indigo;">*States wise distribution is subject to further verification and reconciliation</h6>
             <p><font color="red">Total Death - {{ total_death }}</font></p>
             <p><font color="green">Total Recovered - {{ total_recovered }}</font></p>
             <thread>
-              <tr>
+              <tr style="text-align: center;">
                   <th class='col1'>STATES/UT</th>
                   <th class="col2">CONFIRMED</th>
                   <th class="col3">DEATH</th>
@@ -41,7 +40,7 @@
       
     </tbody>
   </table>  
-</div>
+
 
    
 {% endblock %}
